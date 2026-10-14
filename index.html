@@ -583,15 +583,15 @@ input,select,button,textarea{font-family:&#x27;Malgun Gothic&#x27;,&#x27;Segoe U
           &lt;div class=&quot;wpf-icon&quot;&gt;🗂️&lt;/div&gt;
           &lt;div class=&quot;wpf-info&quot; style=&quot;flex:1&quot;&gt;
             &lt;h3&gt;WPS_PQR 파일 폴더&lt;/h3&gt;
-            &lt;p&gt;아래 버튼을 클릭하거나 경로를 복사하여 윈도우 탐색기에서 열 수 있습니다.&lt;br&gt;
-            WPS 검색 결과의 &lt;strong&gt;Index No.&lt;/strong&gt;를 클릭하면 동일한 폴더가 열립니다.&lt;/p&gt;
-            &lt;div class=&quot;wpf-path&quot; id=&quot;unc-path&quot;&gt;\\osfile.s-oil.com\검사기술자료\1. 기술 자료\WPS 자료\WPS_PQR Files&lt;/div&gt;
+            &lt;p&gt;아래 버튼을 클릭하면 SharePoint의 WPS_PQR Files 폴더를 열 수 있습니다.&lt;br&gt;
+            WPS 검색 결과의 &lt;strong&gt;Index No.&lt;/strong&gt;를 클릭하면 해당 PDF 파일이 열립니다.&lt;/p&gt;
+            &lt;div class=&quot;wpf-path&quot; id=&quot;unc-path&quot;&gt;https://soilcloud.sharepoint.com/:f:/r/sites/12/Shared%20Documents/AI%20Vibe%20Coding%20%EA%B2%B0%EA%B3%BC%EB%AC%BC/WPS%20PQR%20Files?d=wfe5584a662494f8aac830071b3959ec3&amp;csf=1&amp;web=1&amp;e=qTMhqe&lt;/div&gt;
             &lt;div style=&quot;display:flex;gap:10px;flex-wrap:wrap&quot;&gt;
-              &lt;a class=&quot;wpf-btn&quot; href=&quot;file://///osfile.s-oil.com/검사기술자료/1. 기술 자료/WPS 자료/WPS_PQR Files&quot; target=&quot;_blank&quot;&gt;
+              &lt;a class=&quot;wpf-btn&quot; href=&quot;https://soilcloud.sharepoint.com/:f:/r/sites/12/Shared%20Documents/AI%20Vibe%20Coding%20%EA%B2%B0%EA%B3%BC%EB%AC%BC/WPS%20PQR%20Files?d=wfe5584a662494f8aac830071b3959ec3&amp;csf=1&amp;web=1&amp;e=qTMhqe&quot; target=&quot;_blank&quot;&gt;
                 📂 폴더 열기
               &lt;/a&gt;
               &lt;button class=&quot;wpf-btn&quot; style=&quot;background:var(--bm)&quot; onclick=&quot;copyPath()&quot;&gt;
-                📋 경로 복사
+                📋 링크 복사
               &lt;/button&gt;
             &lt;/div&gt;
           &lt;/div&gt;
@@ -599,13 +599,12 @@ input,select,button,textarea{font-family:&#x27;Malgun Gothic&#x27;,&#x27;Segoe U
 
         &lt;div class=&quot;wpf-note&quot;&gt;
           &lt;strong&gt;📌 사용 방법&lt;/strong&gt;&lt;br&gt;
-          ① &lt;strong&gt;[폴더 열기]&lt;/strong&gt; 버튼 클릭 → 윈도우 탐색기에서 WPS_PQR Files 폴더가 열립니다.&lt;br&gt;
-          ② &lt;strong&gt;[경로 복사]&lt;/strong&gt; 버튼 클릭 → 경로를 클립보드에 복사 → 탐색기 주소창에 붙여넣기(Ctrl+V) 후 Enter&lt;br&gt;
+          ① &lt;strong&gt;[폴더 열기]&lt;/strong&gt; 버튼 클릭 → SharePoint에서 WPS_PQR Files 폴더가 열립니다.&lt;br&gt;
+          ② &lt;strong&gt;[링크 복사]&lt;/strong&gt; 버튼 클릭 → SharePoint 폴더 링크를 클립보드에 복사&lt;br&gt;
           ③ &lt;strong&gt;WPS 검색 탭&lt;/strong&gt;에서 결과표의 &lt;strong&gt;Index No. 번호&lt;/strong&gt;를 클릭 → 해당 PDF 파일 바로 열기 (예: #62 클릭 → 62.pdf)&lt;br&gt;&lt;br&gt;
           &lt;strong&gt;⚠️ 참고사항&lt;/strong&gt;&lt;br&gt;
-          • 브라우저 보안 정책에 따라 직접 파일 링크가 차단될 수 있습니다.&lt;br&gt;
-          • 차단 시 경로를 복사하여 윈도우 탐색기(Win+E) 주소창에 직접 붙여넣기 하십시오.&lt;br&gt;
-          • 폴더 접근 권한은 S-OIL 사내 네트워크 연결 상태에 따라 다를 수 있습니다.
+          • SharePoint 로그인 상태 및 폴더 접근 권한에 따라 파일 열기가 제한될 수 있습니다.&lt;br&gt;
+          • 링크가 열리지 않을 경우 [링크 복사] 후 브라우저 주소창에 붙여넣기 하십시오.
         &lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
@@ -818,21 +817,21 @@ function showTab(id,btn){
 init();
 
 // ── WPS_PQR 폴더 링크 ─────────────────────────────────────────
-const WPF_URL=&#x27;file://///osfile.s-oil.com/검사기술자료/1. 기술 자료/WPS 자료/WPS_PQR Files&#x27;;
-const WPF_UNC=&#x27;\\\\osfile.s-oil.com\\검사기술자료\\1. 기술 자료\\WPS 자료\\WPS_PQR Files&#x27;;
+const WPF_URL=&#x27;https://soilcloud.sharepoint.com/sites/12/Shared%20Documents/AI%20Vibe%20Coding%20%EA%B2%B0%EA%B3%BC%EB%AC%BC/WPS%20PQR%20Files&#x27;;
+const WPF_FOLDER_URL=&#x27;https://soilcloud.sharepoint.com/:f:/r/sites/12/Shared%20Documents/AI%20Vibe%20Coding%20%EA%B2%B0%EA%B3%BC%EB%AC%BC/WPS%20PQR%20Files?d=wfe5584a662494f8aac830071b3959ec3&amp;csf=1&amp;web=1&amp;e=qTMhqe&#x27;;
 
 function makeIdxLink(idx){
   // idx는 숫자 문자열 &quot;1&quot;, &quot;62&quot; 등 → 1.pdf, 62.pdf
-  return WPF_URL + &#x27;/&#x27; + idx + &#x27;.pdf&#x27;;
+  return WPF_URL + &#x27;/&#x27; + idx + &#x27;.pdf?web=1&#x27;;
 }
 
 
 
 function copyPath(){
-  const path=&#x27;\\\\osfile.s-oil.com\\검사기술자료\\1. 기술 자료\\WPS 자료\\WPS_PQR Files&#x27;;
+  const path=WPF_FOLDER_URL;
   if(navigator.clipboard){
     navigator.clipboard.writeText(path)
-      .then(()=&gt;alert(&#x27;경로가 클립보드에 복사되었습니다.\n\n탐색기 주소창에 붙여넣기(Ctrl+V) 하세요.&#x27;))
+      .then(()=&gt;alert(&#x27;SharePoint 링크가 클립보드에 복사되었습니다.\n\n브라우저 주소창에 붙여넣기(Ctrl+V) 하세요.&#x27;))
       .catch(()=&gt;fallbackCopy(path));
   } else { fallbackCopy(path); }
 }
@@ -841,8 +840,8 @@ function fallbackCopy(text){
   const ta=document.createElement(&#x27;textarea&#x27;);
   ta.value=text; ta.style.position=&#x27;fixed&#x27;; ta.style.opacity=&#x27;0&#x27;;
   document.body.appendChild(ta); ta.focus(); ta.select();
-  try{ document.execCommand(&#x27;copy&#x27;); alert(&#x27;경로가 복사되었습니다.&#x27;); }
-  catch(e){ prompt(&#x27;경로를 직접 복사하세요:&#x27;, text); }
+  try{ document.execCommand(&#x27;copy&#x27;); alert(&#x27;SharePoint 링크가 복사되었습니다.&#x27;); }
+  catch(e){ prompt(&#x27;링크를 직접 복사하세요:&#x27;, text); }
   document.body.removeChild(ta);
 }
 
